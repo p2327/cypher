@@ -24,7 +24,7 @@ def encrypt(text: IO[str], key: int) -> str:
                 if num > ord('z'):
                     num -= 26
                 elif num < ord('a'):
-                    number += 26
+                    num += 26
             char = chr(num)
         encrypted_text += char
     return encrypted_text
