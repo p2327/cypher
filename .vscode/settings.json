@@ -1,0 +1,7 @@
+{
+    "python.pythonPath": "C:\\Users\\pietr\\Anaconda3\\python.exe",
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true,
+    "files.insertFinalNewline": true
+}

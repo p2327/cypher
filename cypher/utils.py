@@ -1,20 +1,22 @@
-import typing
 from typing import IO
 
-def encrypt(text: IO[str], key: int) -> str:
+
+def encrypt(plaintext: IO[str], key: int) -> str:
     """
     Encrypts a text using shift encryption.
-    
+
     >>> encrypt("Encryption test", 2)
     'Gpetarvkqp vguv'
     >>> encrypt("Encryption test", 4)
     'Irgvctxmsr xiwx'
     """
-    encrypted_text = ''
-    for char in text:
+    cyphertext = ''
+
+    for char in plaintext:
         if char.isalpha():
             num = ord(char)
-            num += key 
+            num += key
+
             if char.isupper():
                 if num > ord('Z'):
                     num -= 26
@@ -25,7 +27,8 @@ def encrypt(text: IO[str], key: int) -> str:
                     num -= 26
                 elif num < ord('a'):
                     num += 26
-            char = chr(num)
-        encrypted_text += char
-    return encrypted_text
 
+            char = chr(num)
+        cyphertext += char
+
+    return cyphertext
