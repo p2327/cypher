@@ -6,6 +6,7 @@ from utils import encrypt
 @click.command()
 @click.option(
     '--input_file',
+    '-i',
     type=click.File('r'),
     help='File in which there is the text you want to encrypt/decrypt.'
          'If not provided, a prompt will allow you to type the input text.',
@@ -43,7 +44,7 @@ def cypher(
     $ python cypher.py
     $ python cypher.py -e -o output_file_name.txt
     $ python cypher.py -e -k 2
-    $ python cypher.py -d file_to_decrypt.txt -o output_file_name.txt -k 2
+    $ python cypher.py -i file_to_decrypt.txt -d -o output_file_name.txt -k 2
     """
     if input_file:
         text = input_file.read()
